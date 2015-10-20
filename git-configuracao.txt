@@ -1,0 +1,308 @@
+
+GERENCIADOR DE VERSAO
+=====================
+
+http://sites.code.education/github-trilhando-caminho-php/
+
+http://git-scm.com/book/pt-br/v1/Primeiros-passos-No%C3%A7%C3%B5es-B%C3%A1sicas-de-Git
+
+
+### Site
+http://www.git-scm.com/download/linux
+
+### INSTALAR LINUX
+apt-get install git
+
+### Teste se esta instalado
+$ git
+### irá aparecer uma serio de provaveis comandos
+
+### IDENTIFICACAO DO USUARIO NO GIT
+### FAZER ISSO SOMENTE UMA VEZ
+$ git config --global user.name "Hudson Souza"
+$ git config --global user.mail "hudsonss@gmail.com"
+$ git config --global color.ui true
+
+
+### Criando seu primeiro repositorios
+$ cd /var/www/
+$ mkdir projeto
+# cd /var/www/projeto
+$ git init
+
+# pasta criada
+/var/www/projeto/.git
+
+### COMANDOS
+git init  	// criar
+git status  // vermelho=nao esta no controle / arq modificado
+			// verde= arq preparado p ser comitado
+git add    	// adiciona
+git add .  	// adiciona tudo
+git commit -m  "Meu primeiro commit" 	// comitar um arq
+git branch  // mostra o caminho
+git log    	// log dos commit
+
+### SUBIR ARQUIVO NA PRATICA
+git status  		// VERMELHO
+git add /var/www/projeto.git/hudson/teste1.php
+git status  		// VERDE
+git commit -m  "Meu primeiro commit"
+git status  		// NADA
+
+
+### VOLTAR A UMA VERSAO ANTERIOR
+git log
+pega o cogido do commit codhhf5728465897345j9834598234
+git checkout codhhf5728465897345j9834598234
+
+
+quando travar na tela
+ESC
+(END)
+digite "q" para sair do log
+
+# MACETE 1 - ADD tds arq de uma vez só
+git add .
+git commit
+
+
+# MACETE 2 - nao precisa do "ADD ." o "-a" adiciona td automaticamente
+git commit -a -m "Comitanto tds arq sem ADD ."
+
+# MACETE 3 -
+git log -p -2
+-- em VERMELHO a linha antiga
+--  em VERDE  a nova linha
+-- "-2" significa q so sera mostrado os ultimos 2 alteracoes
+
+# MACETE 4 - mostra estatistica - qtd entrada/saida
+git log --stat
+
+
+# MACETE 5 - mostra td em um linha somente
+git log --pretty=oneline
+
+
+# MACETE 6 - formata a saida
+git log --pretty=format:"%h - %an, %ar : %s"
+
+2920062 - Hudson Souza, 14 minutos atrás : Comintdo todos arq sem ADD .
+818a956 - Hudson Souza, 27 minutos atrás : - Criando texte.php - Acertei os espacos do texte.php
+2abea46 - Hudson Souza, 30 minutos atrás : descricao 1
+9041626 - Hudson Souza, 42 minutos atrás : Cidade-UF
+86926d1 - Hudson Souza, 45 minutos atrás : Alteracao 2
+493c2e7 - Hudson Souza, 49 minutos atrás : Primeiro Commit
+
+
+# MACETE 7 - log dos ultimos 2 dias/semanas/meses
+git log --since=2.days
+git log --since=2.weeks
+git log --since=2.months
+
+# MACETE 8 - eliminando arq/pastas do sistema indesejaveis, que nao precisa entar no controle de versao
+// CRIA O ARQUIVO
+vim .gitignore
+
+
+####################################
+
+FLUXOS DO GIT
+# ADD um arq
+$ git add teste2.txt
+
+# remover um arq apos ter sido ADD
+$ git reset HEAD teste2.txt
+
+
+### VOLTAR UM COMMIT, UMA VERSAO ANTERIOR
+
+1) voltar numero do commit
+$ git checkout 2920062ab600bb991867ce79594af61e014ba452
+
+2) voltar reset automaticamente
+// remove o commit  mais deixa o arquivo com as alteracoes p ser usado
+$ git reset HEAD~1 --soft  // VOLTA 1 RESET AUTOMATICAMENTE -
+$ git reset HEAD~2   // VOLTA 2 RESET AUTOMATICAMENTE
+$ git reset HEAD~3   // VOLTA 3 RESET AUTOMATICAMENTE
+
+// ESSE DELETA DE VDD
+// remove o commit
+// remove o arquivo alterado
+$ git reset HEAD~1 --hard  // arranca fora o seu comite e os arquivos referentes a este commit
+
+
+3) VOLTANDO AO ESTATUS ORIGINAL
+// recupera um arquivo que estava commit e no repositorio, e sobrepoem um arquivo que estava na sua maquina local
+// arquivo remoto ira   sobrepor o arquivo local
+$ git checkout -- arquivo1.php
+
+
+#####################################
+
+### BRANCHES
+ramificacao do seu soft, para que vc possa trb por exemplo com os tamplets ou layouts de cores do sistema
+nao é necessario para td desenvolvimento do sistema p criar layouts
+
+brancher: cria um galho partindo do tronco principal, para poder desenvolver uma parte do sistema
+
+merge: pega o commit que foi aceito no galho de ramificacao, e tras o commit para a linha (tronco) oficial de desenvolvimento
+
+
+# DESCOBRIR QUAL BREACHER VC ESTATUSA
+$ git branch
+* master
+
+# CRIAR O BREANCHER
+$ git checkout -b funcionalidade1
+
+
+# MUDAR PARA OUTRO BREANCHER "funcionalidade1" --> "master"
+$ git checkout master
+
+
+# MERGE - mesclar
+eu ja estou dentro do branch Master
+$ git checkout master
+ou seja, o Master vai receber todos os commit do Funcionalidade1
+do Funcionalidade1 (merge) dentro do Master
+git merge funcionalidade1
+
+# MERGE2 *** +completo
+nao registra um novo Commit no "git log" só por causa do Merge
+dentro da ordem dos commit,
+Rebase reorganiza a ordem dos commit, trazendo todos os commit p dentro do Master, sem gerar um novo commit p esta tarefa
+$ git rebase funcionalidade1
+
+
+
+# REMOVER UM BRANCH "galho"
+Remover um branch não significa que você removerá os commits que você realizou, pois o merge já foi feito e transferidos com o Merge para o Master
+$ git branch -D funcionalidade1
+
+
+
+
+
+##################################
+
+REPOSITORIO REMOTO GITHUB
+
+www.github.com
+
+login: hudsonsouza
+email: hudsonss@gmail.com
+senha: hudson72
+
+CONFIGURAR NOME E EMAIL
+git config --global user.name "Hudson Souza"
+git config --global user.email "hudsonss@gmail.com"
+
+git log  // mostra o nome e email de quem subiu os arquivos
+
+SUBIR ARQ PARA REPOSITORIO REMOTO
+
+cria uma nova pasta no repositorio virtual
+/teste1/
+HTTP: https://github.com/hudsonsouza/teste1.git
+SSH:  git@github.com:hudsonsouza/teste1.git
+
+git push -u origin master
+
+
+CLONAR O SEU PROJETO
+
+criar um diretorio
+mkdir /var/www/projeto.git/clone
+
+entra dentro do novo diretorio
+cd /var/www/projeto.git/clone
+
+pega o endereco do site GITHUH
+HTTPS clone URL
+git clone https://github.com/hudsonss/teste1.git
+
+
+COMO GERAR UMA CHAVE PUBLICA/PRIVADA
+$ ssh-keygen
+a chave sera gerada neste caminho
+/home/hudson/.ssh/id_rsa
+/home/hudson/.ssh
+passphrase <ENTER>
+
+$ cd /home/hudson/.ssh
+-rw------- 1 hudson hudson 1,7K Out 19 17:10 id_rsa			[CHAVE PRIVADA]
+-rw-r--r-- 1 hudson hudson  400 Out 19 17:10 id_rsa.pub		[CHAVE PUBLICA]
+
+Entra na sua conta no site do gitHub
+sua foto / Settings
+SSH Keys
+Title: chave dell - school of net
+key: <COLAR A ACHAVE PUBLICA AKI>
+
+$ cat id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD7yh9z/UebuXJDkQJxFPzIqnYbaKhQrZ/TfJKCU2Lbs2VCJxRRikGTtd86k+Xlxruu2rtJF3D1Zdh7pg5dfr9YFPZtXNNw0EgjSjKWY19hOZo/76liRtwp5owGfIRfq+LCTJ3xVDRZx6FBbgBw7gAfbMxCTCsvOjN6cuu9WktZx6Bt93/mZCa1d+sqTol+v13swcoNxClqkoPFFPjwGK2ugTr6Z3nQsieB1E6xwmjw2JOVkhZEYdswSSC4hI+zLLCLyeewbsPENVqdPm6toqgwCfQKshUUpiTxMAxIqQnAPZ5nrRFiRbL82xYM4wekLgcq5vC3s+HvviLbk6eD88en hudson@hudson-dell
+
+
+### CRIAR UM REPOSITORIO DENTRO DO GITHUB
+1- Repository - na pagina inicial
+2- New
+3- OWNER: hudsonsouza / REPOSITORU NOME: git-code-education
+   |x| Public
+   | |
+   | | Initiabilize this repository with a README
+
+
+QUICK SETUP:
+HTTPS: https://github.com/hudsonsouza/git-code-education.git
+SSH: git@github.com:hudsonsouza/git-code-education.git
+
+### create a new repository on the command line:
+### criar um novo repositório pela linha de comando:
+
+echo "# git-code-education" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/hudsonsouza/git-code-education.git
+git push -u origin master
+
+
+### push an existing repository from the command line
+### empurrar um repositório existente a partir da linha de comando
+git remote add origin https://github.com/hudsonsouza/git-code-education.git
+git push -u origin master
+
+
+### FAZENOD O PRIMRIO PUSH - EMPURRAR O ARQ
+Adicionar a configuracao remota no Git para empurrar os arquivos para o Repostirio GitHub
+# create a new repository on the command line - HTTPS
+$ git remote add origin https://github.com/hudsonsouza/git-code-education.git
+
+### Onde as configuracoes sao armazenadas
+# dentro da pasta de trabalho local, tem uma pasta oculta .git
+/var/www/school/aulagit/.git
+
+## vim /var/www/school/aulagit/.git/congif
+[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+[remote "origin"]
+        url = https://github.com/hudsonsouza/git-code-education.git
+        fetch = +refs/heads/*:refs/remotes/origin/*
+
+
+### SUBIR OS ARQUIVOS PARA O REPOSITORIO GITHUB
+$ git push origin master
+Username for 'https://github.com': hudsonsouza
+Password for 'https://hudsonsouza@github.com': hudson72
+
+### TROCANDO DE BRANCH
+
+
+
+
+
+
