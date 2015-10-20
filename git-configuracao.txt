@@ -319,6 +319,26 @@ $ git push origin funcionalidade1
 
 
 
+### CLONANDO
+digamos que eu tenho excluido a minha pasta de trabalho local acidentalmente,
+ou eu esteja em outro computador que que nao tenha os meus arquivos
+HTTP esta sempre liberado ***
+SSH pode estar bloqueado ou vc nao ter permissao
+
+Entra dentro da pasta que vc deseja clonar do Repositorio GitHub para seu computador Local
+vai no canto inferior, direito e copie a URL
+# HTTPS clone URL
+https://github.com/hudsonsouza/git-code-education.git
+
+Abra o Terminal
+vai no caminho da pasta que vc deseja clonar os arquivos
+$ cd /var/www/school
+
+# de o comando p clonar os aruqivos
+$ git clone https://github.com/hudsonsouza/git-code-education.git
+
+
+
 
 
 
