@@ -299,7 +299,26 @@ $ git push origin master
 Username for 'https://github.com': hudsonsouza
 Password for 'https://hudsonsouza@github.com': hudson72
 
-### TROCANDO DE BRANCH
+### TROCANDO DE BRANCH e SUBINDO OS ARQUIVOS DESDE NOVO BRANCH
+$ git branch
+  funcionalidade1
+* master
+
+# TROCO PARA O BRANCH "funcionalidade1"
+$ git checkout funcionalidade1
+
+# DA O COMMIT NO REPOSITORIO LOCAL
+$ git status
+$ git add git-configuracao.txt
+$ git status
+$ git commit -m "Primeiro Push OK"
+$ git status
+
+# SOBE O ARQUIVO PARA O REPOSITORIO Github
+$ git push origin funcionalidade1
+
+
+
 
 
 
