@@ -338,6 +338,21 @@ $ cd /var/www/school
 $ git clone https://github.com/hudsonsouza/git-code-education.git
 
 
+### MOSTRAR OS BRANCH REMOTOS - q estao no repositorio GitHub
+$ git branch -a
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/funcionalidade1
+  remotes/origin/master
+
+para cada novo branch, vc precisa criar novamente o Branch auxiliar
+$ git chechout -b funcionalidade1 origin/funcionalidade1
+
+### sincroninado todos os arquivos
+$ git pull
+Already up-to-date  // já esta atualizado
+caso nao esteja atualizado,  o "git pull" AUTOMATICAMENTE ja  vai atualizar todos os Branch
+
 
 
 
