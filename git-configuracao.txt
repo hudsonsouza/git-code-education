@@ -51,6 +51,7 @@ git commit -m  "Meu primeiro commit"
 git status  		// NADA
 
 
+
 ### VOLTAR A UMA VERSAO ANTERIOR
 git log
 pega o cogido do commit codhhf5728465897345j9834598234
