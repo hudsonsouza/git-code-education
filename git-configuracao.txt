@@ -34,16 +34,16 @@ $ git init
 /var/www/projeto/.git
 
 ### COMANDOS
-git init  	// criar
+git init  	// criar projeto
 git status  // vermelho=nao esta no controle / arq modificado
 			// verde= arq preparado p ser comitado
-git add    	// adiciona
+git add    	// adiciona o arq para ser comitado
 git add .  	// adiciona tudo
 git commit -m  "Meu primeiro commit" 	// comitar um arq
 git branch  // mostra o caminho
 git log    	// log dos commit
 
-### SUBIR ARQUIVO NA PRATICA
+### SUBIR ARQUIVO NA PRATICA ###
 git status  		// VERMELHO
 git add /var/www/projeto.git/hudson/teste1.php
 git status  		// VERDE
@@ -69,6 +69,7 @@ git commit
 
 # MACETE 2 - nao precisa do "ADD ." o "-a" adiciona td automaticamente
 git commit -a -m "Comitanto tds arq sem ADD ."
+
 
 # MACETE 3 -
 git log -p -2
@@ -118,6 +119,8 @@ $ git reset HEAD teste2.txt
 ### VOLTAR UM COMMIT, UMA VERSAO ANTERIOR
 
 1) voltar numero do commit
+$ git log
+pega o cogido do commit 2920062ab600bb991867ce79594af61e014ba452
 $ git checkout 2920062ab600bb991867ce79594af61e014ba452
 
 2) voltar reset automaticamente
@@ -144,16 +147,16 @@ $ git checkout -- arquivo1.php
 ramificacao do seu soft, para que vc possa trb por exemplo com os tamplets ou layouts de cores do sistema
 nao é necessario para td desenvolvimento do sistema p criar layouts
 
-brancher: cria um galho partindo do tronco principal, para poder desenvolver uma parte do sistema
+branches: cria um galho partindo do tronco principal, para poder desenvolver uma parte do sistema
 
 merge: pega o commit que foi aceito no galho de ramificacao, e tras o commit para a linha (tronco) oficial de desenvolvimento
 
 
-# DESCOBRIR QUAL BREACHER VC ESTATUSA
+# DESCOBRIR QUAL BREACHES VC ESTATUSA
 $ git branch
 * master
 
-# CRIAR O BREANCHER
+# CRIAR O BREANCHES
 $ git checkout -b funcionalidade1
 
 
@@ -348,11 +351,10 @@ $ git branch -a
 para cada novo branch, vc precisa criar novamente o Branch auxiliar
 $ git chechout -b funcionalidade1 origin/funcionalidade1
 
-### sincroninado todos os arquivos
+### sincronizando todos os arquivos
 $ git pull
 Already up-to-date  // já esta atualizado
 caso nao esteja atualizado,  o "git pull" AUTOMATICAMENTE ja  vai atualizar todos os Branch
-
 
 
 
