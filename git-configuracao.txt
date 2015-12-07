@@ -278,6 +278,7 @@ git remote add origin https://github.com/hudsonsouza/git-code-education.git
 git push -u origin master
 
 
+
 ### FAZENOD O PRIMRIO PUSH - EMPURRAR O ARQ
 Adicionar a configuracao remota no Git para empurrar os arquivos para o Repostirio GitHub
 # create a new repository on the command line - HTTPS
