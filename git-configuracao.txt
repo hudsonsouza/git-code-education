@@ -278,7 +278,6 @@ git remote add origin https://github.com/hudsonsouza/git-code-education.git
 git push -u origin master
 
 
-
 ### FAZENOD O PRIMRIO PUSH - EMPURRAR O ARQ
 Adicionar a configuracao remota no Git para empurrar os arquivos para o Repostirio GitHub
 # create a new repository on the command line - HTTPS
@@ -298,11 +297,23 @@ $ git remote add origin https://github.com/hudsonsouza/git-code-education.git
         url = https://github.com/hudsonsouza/git-code-education.git
         fetch = +refs/heads/*:refs/remotes/origin/*
 
+---------
 
-### SUBIR OS ARQUIVOS PARA O REPOSITORIO GITHUB
-$ git push origin master
+### SUBIR ARQUIVO NA PRATICA ###
+git status  		// VERMELHO
+git add /var/www/projeto.git/hudson/teste1.php
+git status  		// VERDE
+git commit -m  "Meu primeiro commit"
+git status  		// NADA
+
+----------
+
+### SUBIR OS ARQUIVOS PARA O REPOSITORIO GITHUB ***
+$ git push -u origin master
 Username for 'https://github.com': hudsonsouza
 Password for 'https://hudsonsouza@github.com': hudson72
+---------
+
 
 ### TROCANDO DE BRANCH e SUBINDO OS ARQUIVOS DESDE NOVO BRANCH
 $ git branch
