@@ -299,7 +299,7 @@ $ git remote add origin https://github.com/hudsonsouza/git-code-education.git
 
 ---------
 
-### SUBIR ARQUIVO NA PRATICA ###
+### 1) SUBIR ARQUIVO GIT LOCAL ***
 git status  		// VERMELHO
 git add /var/www/projeto.git/hudson/teste1.php
 git status  		// VERDE
@@ -308,11 +308,14 @@ git status  		// NADA
 
 ----------
 
-### SUBIR OS ARQUIVOS PARA O REPOSITORIO GITHUB ***
+### 2) SUBIR OS ARQUIVOS REPOSITORIO GITHUB NA WEB ***
 $ git push -u origin master
 Username for 'https://github.com': hudsonsouza
 Password for 'https://hudsonsouza@github.com': hudson72
 ---------
+
+### CRIA UM NOVO BRANCH
+$ git checkout -b funcionalidade1
 
 
 ### TROCANDO DE BRANCH e SUBINDO OS ARQUIVOS DESDE NOVO BRANCH
@@ -331,7 +334,7 @@ $ git commit -m "Primeiro Push OK"
 $ git status
 
 # SOBE O ARQUIVO PARA O REPOSITORIO Github
-$ git push origin funcionalidade1
+$ git push -u origin funcionalidade1
 
 
 
@@ -348,10 +351,13 @@ https://github.com/hudsonsouza/git-code-education.git
 
 Abra o Terminal
 vai no caminho da pasta que vc deseja clonar os arquivos
-$ cd /var/www/school
+$ cd /var/www/school/
 
-# de o comando p clonar os aruqivos
-$ git clone https://github.com/hudsonsouza/git-code-education.git
+# CRIA UMA NOVA PASTA P O CLONE
+$ mkdir /var/www/school/clone
+
+# Com o Brach "Funcionalidade1", de o comando p clonar os aruqivos
+$ git clone https://github.com/hudsonsouza/git-code-education.git/
 
 
 ### MOSTRAR OS BRANCH REMOTOS - q estao no repositorio GitHub
