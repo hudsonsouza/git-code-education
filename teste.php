@@ -1,2 +1,2 @@
 <?php phpinfo(); ?>
-<?="Teste"; ?>
+<? echo="Olhá Mundo Git/GitHub"; ?>
