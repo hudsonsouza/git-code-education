@@ -6,6 +6,12 @@ http://sites.code.education/github-trilhando-caminho-php/
 
 http://git-scm.com/book/pt-br/v1/Primeiros-passos-No%C3%A7%C3%B5es-B%C3%A1sicas-de-Git
 
+################
+
+Branch: funcionalidade1
+Alteracao de arq 1
+
+################
 
 ### Site
 http://www.git-scm.com/download/linux
