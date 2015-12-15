@@ -376,8 +376,39 @@ Already up-to-date  // já esta atualizado
 caso nao esteja atualizado,  o "git pull" AUTOMATICAMENTE ja  vai atualizar todos os Branch
 
 
+###  PULL REQUEST - PR ###
+
+### FORK
+Faz um clone do codigo original dentro do seu GitHub
+ai sim vc pode fazer suas alteracoes, commits
+
+depois vc avisa p o dono do codigo original q as alteracoes estao prontas e ele vai olhar
+se gostar o dono original da um Merge no seu codigo p dentro do dele (Original)
+
+### UNWATCH
+vc recebe uma notificacao a cada vez que o codigo for modificado
 
 
+### Removendo branch remoto
 
+Quando um branch local é removido, isso não significa que o branch remoto também será.
+Nesse caso, há um comando específico para que possamos remover um branch remoto. Utilize o comando:
+
+$ git push origin :nome-do-branch
+
+######################################
+
+
+### TRABALHO 1 ###
+
+Fazendo o primeiro push
+
+Nessa primeira fase você terá que fazer um push em um repositório qualquer criado por você no Github. Você também terá como desafio criar um arquivo README.md que deverá ser exibido automaticamente quando alguém acessar o endereço de seu repositório.
+
+Utilizando Markdown, coloque as principais instruções que você utilizou para conseguir fazer seu push (desde o commit). Estamos cientes de que não cobrimos essa parte do README, porém, temos muita fé que você conseguirá gerar esse arquivo com essas instruções.
+
+Assim que terminar essa fase, coloque a URL de seu repositório na área de entrega de projetos, para fazermos a validação.
+
+OBS: Sim, sempre iremos força-lo a fazer sempre um pouco mais =)
 
 
