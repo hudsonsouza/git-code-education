@@ -1,0 +1,7 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+[remote "local"]
+	url = ssh://localhost/var/www/school/git-code-education/aulagit.git
+	fetch = +refs/heads/*:refs/remotes/local/*
