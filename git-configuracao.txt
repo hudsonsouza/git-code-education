@@ -458,6 +458,122 @@ Para você encontrar maiores informações sobre versionamento semântico acesse
 http://semver.org/
 
 
+----------------------------
+
+O comando responsável por remover uma tag remota é:
+ git push origin :nome-da-tag
+ git pull origin :refs/tags/nome-da-tag
+* git push origin :refs/tags/nome-da-tag
+ git tag -d nome-da-tag
+O comando responsável por listar todas as tags é:
+ git push origin master --tags
+ git tag
+* git tag -l
+ git tag list
+O comando utilizado para criar uma tag é:
+ git tag -l nome-da-tag
+ git tag create nome-da-tag
+* git tag nome-da-tag
+ git tag add nome-da-tag
+O comando responsável para remover uma tag é:
+* git tag -d nome-da-tag
+ git tag -l
+ git tag --purge
+ git tag remove nome-da-tag
+
+----------------------------
+
+###########################
+
+### RESOLVENDO CONFLITOS
+
+qd o ''branch master'' faz uma alteracao do codigo fonte, e faz o commit, subindo p o GitHub
+pode acontecer do ''branch cadastro'' tb realizar um outra alteracao do codigo fonte, faz o commit e subir p GitHub
+
+qd o 'branch master' for fazer o MERGE o git vai dar uma mensagem de erro, avisando que a um conflito,
+"Auto-merging arquuivo-novobranch.php"
+"CONFLICT (content): Merge conflict in arquivo-novobranch.php"
+"Automatic merge failed; fix conflicts and then commit the result"
+
+o Git vai te mostrar as linhas do codigo fonte que estao em conflito
+abra o arquivo-novobranch.php
+$ vim arquivo-novobranch.php
+
+----------------------
+<?php
+<<<<<<<<<< HEAD
+echo "olá mundo -1";
+========
+echo "olá mundo 2";
+>>>>>>>>>> master
+----------------------
+
+
+o <<< HEAD é o branch que vc esta logago no momento
+o >>> master é o 'branch master' que é o outro branch que gerou o conflito
+
+agora vc vai decidir qual das duas linhas de cofigo fonte esta correta, e descartar a outra
+echo "olá mundo -1";
+echo "olá mundo 2";
+
+$ git status
+You have umerger paths
+	(fix conflicts and rum "git commit")
+Unmerger paths:
+	(use "git add <file>..." to mark resolution)
+	both modified: arquivo-novobranch.php
+
+### Para resolver o conflito
+edite o arquivo e apague a linha de condigo fonte que estiver errada
+
+$ vim arquivo-novobranch.php
+
+----------------------
+<?php
+echo "olá mundo -1";
+----------------------
+
+:x Salvar!
+
+$ git add arquivo-novobranch.php
+$ git status
+$ git commi -m "Resolvido o conflito"
+
+
+###########################
+### REPOSITORIO BARE
+
+trb com o git de uma forma remota. mas local (localhost)
+
+# criar uma pasta para ser o repositório
+$ mkdir /var/www/school/git-code-education/aulagit.git
+
+# entre na pastas
+$ cd aulagit.git
+
+# inicialize o git com um parametro a mais p o repositorio "--bare"
+$ git init --bare
+
+Serve p hospedar os seus arquivos de controle de versao
+
+volte um niver a cima
+$ cd ..
+
+# configurando git p trb localhost
+$ git remote add local ssh://localhost/var/www/school/git-code-education/aulagit.git
+
+local  = nome para o repositorio local (antes era: origin)
+ssh://... = endereco da minha pasta de repositorio
+
+# subindo os arquivos p repositorio localhost
+$ git push local master
+senha
+yes
+
+
+
+
+
 
 
 
