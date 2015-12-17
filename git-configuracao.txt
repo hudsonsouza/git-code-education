@@ -567,9 +567,47 @@ ssh://... = endereco da minha pasta de repositorio
 
 # subindo os arquivos p repositorio localhost
 $ git push local master
-senha
+senha [usuario comum do computador]
 yes
 
+
+############################
+### TRABALHANDO COM HOOKS (eventos)
+
+fazer deploy, qd vc faz um commit p o GitHub, ele mesmo ja copia os arquivos para a hospedagem do seu site via FTP
+
+# entra na pasta Hooks do seu repositorio localhost
+$ cd /var/www/school/git-code-education/aulagit.git/hooks
+
+# criar um novo evento, cria um arquivo
+$ vim post-receive
+------------
+#!/bin/sh
+###GIT_WORK_TREE=/var/www/school/git-code-education/http://www.hudsonss.com.br/teste git checkout -f
+GIT_WORK_TREE=/var/www/school/git-code-education/meusite.com.br git checkout -f
+------------
+
+:x Salvar!
+
+# dar permissão de Excecução
+$ chmod +x post-receive
+$ chmod 755 post-receive
+
+# agora ja pode realuizar as alteracoes normais no codigo fonte dos arquivos
+
+$ vim arquivo.txt
+	blablabla
+	:x
+
+git status
+git add arquivo.txt
+git commit -m "Alteracoes arquivo.txt"
+
+# atualizar o repositorio GitHub
+$ git push origin master
+
+# Atualizar o repositorio LocalHost
+$ git push local master
 
 
 
