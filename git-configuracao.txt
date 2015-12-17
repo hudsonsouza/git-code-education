@@ -412,3 +412,56 @@ Assim que terminar essa fase, coloque a URL de seu repositório na área de entr
 OBS: Sim, sempre iremos força-lo a fazer sempre um pouco mais =)
 
 
+#############################
+### TRABALHANDO COM TAGS ####
+
+tag sao marcadores
+funcionamento: utiliza para fazer Release da versao 1.0.3
+ate esse commit é essa versao, depois dele ja é outra versao
+
+# inserir uma Tag
+$ git tag 0.1.3
+
+# listar todas as tags
+$ git tag -l
+0.1.3
+
+# subir todas as tags que tem para o GitHub
+$ git push origin master --tags
+
+# para remover as tags criadas, utilize os comandos abaixo:
+
+git tag -d 0.1.0  (removendo tag localmente)
+git push origin :refs/tags/0.1.0 (removendo tag no repositório remoto)
+
+
+no GitHub clicar no icone RELEASE
+vai te mostra
+versao da tag
+o texto do commit
+o numero do commits
+download .zip    .tar.gz
+
+
+### VERSIONAMENTO SEMANTICO
+é como que vc vai versionar o seu software
+é uma form organizada de gerar as versoes organizadas do seu software
+
+0.1.3
+0 = versao princila / quebrar totalmente a compatibilidade
+1 = uma versao menor / pode quebrar parcialmente a compatibilidade
+3 = uma nova funcionalidade / teste / correcao de bug
+
+
+Mais sobre versionamento semântico
+Para você encontrar maiores informações sobre versionamento semântico acesse:
+http://semver.org/
+
+
+
+
+
+
+
+
+
